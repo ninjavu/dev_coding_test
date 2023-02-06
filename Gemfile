@@ -13,9 +13,8 @@ gem 'redis', '~> 4.0'
 gem 'webpacker', '~> 5.0' # [TODO] Refactor with new approach.
 
 group :development, :test do
-  # gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'rspec-rails'
   gem 'dotenv-rails'
+  gem 'rspec-rails'
 end
 
 group :development do

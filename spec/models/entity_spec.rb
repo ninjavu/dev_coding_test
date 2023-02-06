@@ -10,9 +10,9 @@ RSpec.describe Entity, type: :model do
     it { should validate_presence_of(:entity_type) }
 
     it {
-      should validate_uniqueness_of(:entity_type).scoped_to(:sentence_id)
-                                                 .with_message('has already been taken')
-                                                 .case_insensitive
+      should validate_uniqueness_of(:name).scoped_to(:sentence_id)
+                                          .with_message('has already been taken')
+                                          .case_insensitive
     }
 
     it { should_not allow_value('test@test').for(:name) }
