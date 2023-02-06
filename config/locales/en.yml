@@ -1,0 +1,27 @@
+en:
+  heading: "Dev Coding Test (Simple Annotation Tool)"
+  create_entity: "Create Entity"
+  edit_sentence: "Edit Sentence"
+  form:
+    save: "Save"
+  content: "Content"
+  name: "Name"
+  type: "Type"
+  entity_format_message: "shouldn't contain special symbols"
+  entity_pattern: "a-zA-Z0-9"
+  activerecord:
+    errors:
+      models:
+        sentence:
+          attributes:
+            content:
+              blank: "can't be blank"
+              taken: "has already been taken"
+        entity:
+          attributes:
+            name:
+              blank: "can't be blank"
+              taken: "has already been taken"
+            enitity_type:
+              blank: "can't be blank"
+              taken: "has already been taken"

@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: migrate
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      imagePullPolicy: Always
+      containers:
+        - name: migrate
+          image: registry.digitalocean.com/letdigit/dev_coding_test:0.0.1
+          command: ['rails']
+          args: ['db:migrate']
+          env:
+          - name: DATABASE_HOST
+            value: db-service
+            
+          - name: DATABASE_USERNAME
+            value: ninjavu
+
+          - name: DATABASE_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secret
+                key: password

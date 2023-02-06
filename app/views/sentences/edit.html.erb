@@ -1,0 +1,12 @@
+<%= form_for @sentence do |form| %>
+  <%= render "shared/page" %>
+  <%= render "shared/errors", resource: @sentence %>
+
+  <div class="input-group mb-3">
+    <%= form.text_area :content, class: "form-control", rows: 10, cols: 200, placeholder: I18n.t("content") %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.submit I18n.t("form.save"), class: "btn btn-primary" %>
+  </div>
+<% end %>
