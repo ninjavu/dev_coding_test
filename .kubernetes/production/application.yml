@@ -29,6 +29,12 @@ spec:
             secretKeyRef:
               name: mysql-secret
               key: password
+        
+        - name: RAILS_MASTER_KEY
+          valueFrom:
+            secretKeyRef:
+              name: rails-secret
+              key: secret
           
         ports:
         - containerPort: 3000
