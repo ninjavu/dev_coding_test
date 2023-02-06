@@ -12,7 +12,7 @@ spec:
         name: dev-coding-test
     spec:
       containers:
-      - image: registry.digitalocean.com/letdigit/dev_coding_test:0.0.1
+      - image: registry.digitalocean.com/letdigit/dev_coding_test:0.0.3
         name: dev-coding-test
         env:
         - name: DATABASE_HOST
