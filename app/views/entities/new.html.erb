@@ -1,0 +1,16 @@
+<%= form_for [@sentence, @entity] do |form| %>
+  <%= render "shared/page" %>
+  <%= render "shared/errors", resource: @entity %>
+  
+  <div class="input-group mb-3">
+    <%= form.text_field :name, class: "form-control", placeholder: I18n.t("name") %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.text_field :entity_type, class: "form-control", placeholder: I18n.t("type") %>
+  </div>
+
+  <div class="input-group mb-3">
+    <%= form.submit I18n.t("form.save"), class: "btn btn-primary" %>
+  </div>
+<% end %>

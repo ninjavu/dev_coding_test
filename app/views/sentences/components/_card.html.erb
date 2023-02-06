@@ -1,0 +1,20 @@
+<div class="card my-5 shadow">
+  <div class="card-body">
+    <div>
+      <% sentence.entities.each do |entity| %>
+        <%= render "shared/tag", name: entity.name, entity_type: entity.entity_type %>
+      <% end %>
+    </div>
+    <hr/>
+
+    <div>
+      <%== annotated_content(sentence.content, sentence.entities) %>
+    </div>
+    <hr/>
+
+    <div class="d-flex justify-content-end">
+      <%= link_to I18n.t("create_entity"), new_sentence_entity_path(sentence, page: params[:page]), class: "btn btn-primary mx-1" %>
+      <%= link_to I18n.t("edit_sentence"), edit_sentence_path(sentence, page: params[:page]), class: "btn btn-primary mx-1" %>
+    </div>
+  </div>
+</div>

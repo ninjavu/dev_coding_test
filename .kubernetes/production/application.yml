@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: dev-coding-test
+spec:
+  selector:
+    matchLabels:
+      name: dev-coding-test
+  template:
+    metadata:
+      labels:
+        name: dev-coding-test
+    spec:
+      containers:
+      - image: registry.digitalocean.com/letdigit/dev_coding_test:0.0.1
+        name: dev-coding-test
+        env:
+        - name: DATABASE_HOST
+          value: db-service
+          
+        - name: DATABASE_USERNAME
+          value: ninjavu
+        
+        - name: DATABASE_PORT
+          value: '3306'
+
+        - name: DATABASE_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: password
+          
+        ports:
+        - containerPort: 3000
+          name: dev-coding-test
+          
+        imagePullPolicy: Always
+
